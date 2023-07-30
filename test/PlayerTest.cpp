@@ -1,9 +1,8 @@
-#include "Player.hpp"
-#include "gtest/gtest.h"
-
+#include <Player.hpp>
+#include <gtest/gtest.h>
 
 // Test Player Initialization
-TEST(PlayerTest, PiddleTest) {
+TEST(PlayerTest, Initialization) {
     Player player(1,1,1);
     EXPECT_EQ(1,player.getPositionX());
 }

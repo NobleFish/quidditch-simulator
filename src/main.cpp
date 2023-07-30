@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Player.hpp"
-#include "Ball.hpp"
+#include <Player.hpp>
+#include <Ball.hpp>
 
 int main() {
     // Sample usage of Player and Ball classes

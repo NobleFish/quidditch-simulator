@@ -1,5 +1,4 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#pragma once
 
 class Player {
 public:
@@ -23,5 +22,3 @@ private:
     double skillLevel;
     bool hasBall;
 };
-
-#endif
