@@ -2,20 +2,20 @@
 // Include files for the test
 #include <gtest/gtest.h>
 
-namespace playerTest {
+namespace fixtureName {
 // The fixture for testing class Foo.
-class PlayerTest : public ::testing::Test {
+class FixtureName : public ::testing::Test {
     /*
     protected:
     // You can remove any or all of the following functions if their bodies would
     // be empty.
 
     
-    PlayerTest() {
+    FixtureName() {
         // You can do set-up work for each test here.
     }
 
-    ~PlayerTest() override {
+    ~FixtureName() override {
         // You can do clean-up work that doesn't throw exceptions here.
     }
 
@@ -35,7 +35,7 @@ class PlayerTest : public ::testing::Test {
 };
 
 
-TEST_F(PlayerTest, Initialization)
+TEST_F(FixtureName, TestName)
 {    
     // Tests
 }

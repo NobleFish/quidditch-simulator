@@ -4,17 +4,19 @@
 
 class Player {
 public:
-    Player(int x, int y, double skillLevel);
+    Player(Location startLocation, double skillLevel);
 
-    void move(int deltaX, int deltaY);
-    void carry(int deltaX, int deltaY);
-    void pass(int targetX, int targetY, double passSpeed);
-    void shoot(int targetX, int targetY, double shotSpeed);
+    /*
+    void move(Location movementLocation);
+    void carry(Location movementLocation);
+    void pass(Location targetLocation, double passSpeed);
+    void shoot(Location targetLocation, double shotSpeed);
     
     void takePossession(Ball& ball);
 
     int getPositionX() const;
     int getPositionY() const;
+    */
 
 private:
     int positionX;

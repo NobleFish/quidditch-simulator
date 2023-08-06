@@ -1,5 +1,5 @@
 #include <Player.hpp>
-
+/*
 Player::Player(int posX, int posY, double initSkillLevel) : positionX(posX), positionY(posY), skillLevel(initSkillLevel)
 {
 
@@ -29,3 +29,4 @@ void Player::shoot(int targetX, int targetY, double shotSpeed){
 
 int Player::getPositionX() const {return positionX;}
 int Player::getPositionY() const {return positionY;}
+*/

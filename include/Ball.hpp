@@ -1,23 +1,33 @@
 #pragma once
 
-#include <QuidditchUtilities.hpp>
+#include <QuidditchUtilityStructs.hpp>
 
 // Generic Ball Class
 class Ball {
 public:
-    Ball(int x, int y);
+    // Constructor with starting Location
+    explicit Ball(Location startLocation);
 
-    int getPositionX() const;
-    int getPositionY() const;
+    Location getLocation() const;
+    void setLocation(Location newLocation);
 
-    int getVelocity() const;
+    float getVelocity() const;    
+    void setVelocity(float newVelocity);
     
+    bool getPossession() const; 
+    void setPossession(bool controlled);
+
+    Location getTarget() const;
+    void setTarget(Location location);
 
     // Add any additional ball-related properties and functions
 
 private:
-    int positionX;
-    int positionY;
-    int velocity;
+    Location location;
+    float velocity = 0.0F;
+    bool possession = false;
+    Location targetLocation = {0,0};
+
+
     // Add any other ball-related properties
 };

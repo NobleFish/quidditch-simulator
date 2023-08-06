@@ -1,9 +1,9 @@
 #include <iostream>
-#include <Player.hpp>
 #include <Ball.hpp>
 
 int main() {
     // Sample usage of Player and Ball classes
+    /*
     Player player(0, 0, 1.0);
     Ball ball(0, 0);
 
@@ -14,6 +14,6 @@ int main() {
 
     std::cout << "Player Position: (" << player.getPositionX() << ", " << player.getPositionY() << ")" << std::endl;
     std::cout << "Ball Position: (" << ball.getPositionX() << ", " << ball.getPositionY() << ")" << std::endl;
-
+    */
     return 0;
 }

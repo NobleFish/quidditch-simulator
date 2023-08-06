@@ -1,26 +1,45 @@
 #include <Ball.hpp>
 
-Ball::Ball(int x, int y): positionX(x), positionY(y) {
-    
+Ball::Ball(Location startLocation): location(startLocation)
+{
+
 }
 
-int Ball::getPositionX() const {
-    return positionX;
+Location Ball::getLocation() const 
+{
+    return location;
 }
 
-int Ball::getPositionY() const {
-    return positionY;
+void Ball::setLocation(Location newLocation)
+{
+    location = newLocation;
 }
 
-Location Ball::getLocation() const {
-    return {x(positionX), y(positionY)}
-} 
-
-
-int Ball::getVelocity() const {
+float Ball::getVelocity() const 
+{
     return velocity;
 }
 
-void Ball::update(){
+void Ball::setVelocity(float newVelocity)
+{
+    velocity = newVelocity;
+}
 
+bool Ball::getPossession() const
+{
+    return possession;
+}
+
+void Ball::setPossession(bool isControlled){
+    possession = isControlled;
+}
+
+Location Ball::getTarget() const
+{
+    return targetLocation;
+}
+
+void Ball::setTarget(Location newTargetLocation)
+{
+    targetLocation = newTargetLocation;
 }
