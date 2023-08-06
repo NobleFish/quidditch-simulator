@@ -1,5 +1,5 @@
 #include <Ball.hpp>
-#include <QuidditchUtilityStructs.hpp>
+#include <Location.hpp>
 #include <gtest/gtest.h>
 
 namespace ballTest {

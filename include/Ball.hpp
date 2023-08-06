@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QuidditchUtilityStructs.hpp>
+#include <Location.hpp>
 
 // Generic Ball Class
 class Ball {

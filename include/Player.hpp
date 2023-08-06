@@ -1,27 +1,29 @@
 #pragma once
 
+#include <iostream>
+
 #include <Ball.hpp>
+#include <Location.hpp>
 
 class Player {
 public:
-    Player(Location startLocation, double skillLevel);
+    Player(std::string pName,Location startLocation, float moveSpeed, float throwSpeed);
 
-    /*
-    void move(Location movementLocation);
-    void carry(Location movementLocation);
-    void pass(Location targetLocation, double passSpeed);
-    void shoot(Location targetLocation, double shotSpeed);
+    const std::string& getPlayerName() const;
+    void moveTo(Location movementLocation);
+    void passTo(Location targetLocation);
+    void shootAt(Location targetLocation);
     
-    void takePossession(Ball& ball);
+    void takePossession(Ball* ball);
 
-    int getPositionX() const;
-    int getPositionY() const;
-    */
+    Location getLocation() const;
+    Location setLocation(Location newLocation);
 
 private:
-    int positionX;
-    int positionY;
-    double skillLevel;
-    bool hasBall;
-    Ball& activeBall;
+    std::string playerName = "";
+    Location currentLocation;
+    float moveSpeed;
+    float throwSpeed;
+    bool hasBall = false;
+    Ball* activeBall = nullptr;
 };

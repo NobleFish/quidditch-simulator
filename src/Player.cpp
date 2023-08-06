@@ -1,32 +1,44 @@
 #include <Player.hpp>
-/*
-Player::Player(int posX, int posY, double initSkillLevel) : positionX(posX), positionY(posY), skillLevel(initSkillLevel)
+
+Player::Player(std::string pName,Location startLocation, float mSpeed, float tSpeed) : playerName(std::move(pName)),currentLocation(startLocation), moveSpeed(mSpeed), throwSpeed(tSpeed)
 {
 
 }
 
-void Player::move(int deltaX, int deltaY)
+void Player::moveTo(Location movementLocation)
 {
-    positionX += deltaX;
-    positionY += deltaY;
+    std::cout << playerName << " moving to" << movementLocation << std::endl; 
+    currentLocation = movementLocation;
+
+    if(hasBall){
+        activeBall->setLocation(movementLocation);
+    }
 
 }
 
-void Player::takePossession(Ball& ball){
+void Player::takePossession(Ball* ball){
     activeBall = ball;
-    ball.setPossession(true);
+    activeBall->setPossession(true);
+    hasBall = true;
+
 }
 
-void Player::pass(int targetX, int targetY, double passSpeed)
+void Player::passTo(Location target)
 {
     if(hasBall){
+        std::cout << playerName << " passing @ " << target << std::endl;
+        activeBall->setTarget(target);
+        hasBall = false;
+    }
 
+}
+void Player::shootAt(Location target){
+    if(hasBall){
+        std::cout << playerName << " shooting @ " << target << std::endl;
+        activeBall->setTarget(target);
+        hasBall = false;
     }
 }
-void Player::shoot(int targetX, int targetY, double shotSpeed){
 
-}
-
-int Player::getPositionX() const {return positionX;}
-int Player::getPositionY() const {return positionY;}
-*/
+Location Player::getLocation() const {return currentLocation;}
+const std::string& Player::getPlayerName() const {return playerName;};
