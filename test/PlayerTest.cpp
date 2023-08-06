@@ -1,4 +1,3 @@
-
 // Include files for the test
 #include <gtest/gtest.h>
 
@@ -42,7 +41,3 @@ TEST_F(PlayerTest, Initialization)
 
 }  // namespace
 
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

@@ -9,7 +9,7 @@ class BallTest : public ::testing::Test {};
 TEST_F(BallTest, Initialization)
 {    
     // Ball initializes correctly with initialization list for Location
-    Ball genericBall_A({0,1}); 
+    Ball genericBall_A({0,5}); 
 
     EXPECT_EQ(genericBall_A.getLocation().x,0);
     EXPECT_EQ(genericBall_A.getLocation().y,1);
@@ -68,7 +68,3 @@ TEST_F(BallTest, ManualUpdates)
 
 }  // namespace
 
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
