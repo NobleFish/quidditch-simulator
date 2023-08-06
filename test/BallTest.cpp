@@ -9,7 +9,7 @@ class BallTest : public ::testing::Test {};
 TEST_F(BallTest, Initialization)
 {    
     // Ball initializes correctly with initialization list for Location
-    Ball genericBall_A({0,5}); 
+    Ball genericBall_A({0,1}); 
 
     EXPECT_EQ(genericBall_A.getLocation().x,0);
     EXPECT_EQ(genericBall_A.getLocation().y,1);
