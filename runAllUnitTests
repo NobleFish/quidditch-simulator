@@ -1,4 +1,5 @@
 #!/bin/bash
+./makeAll
 if [ -d "./build/test/" ]; then
     cd ./build/test/
     ./unit_tests "$@"
