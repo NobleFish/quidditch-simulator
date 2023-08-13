@@ -10,14 +10,26 @@ public:
     Player(std::string pName,Location startLocation, float moveSpeed, float throwSpeed);
 
     const std::string& getPlayerName() const;
+    
     void moveTo(Location movementLocation);
     void passTo(Location targetLocation);
     void shootAt(Location targetLocation);
     
     void takePossession(Ball* ball);
+    void releasePossession();
 
     Location getLocation() const;
-    Location setLocation(Location newLocation);
+    void setLocation(Location newLocation);
+
+    float getMoveSpeed() const;
+    void setMoveSpeed(float newMoveSpeed);
+
+    float getThrowSpeed() const;
+    void setThrowSpeed(float newThrowSpeed);
+
+    bool carrying() const;
+
+    Ball* getActiveBall() const;
 
 private:
     std::string playerName = "";
