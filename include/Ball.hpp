@@ -28,6 +28,5 @@ private:
     bool possession = false;
     Location targetLocation = {0,0};
 
-
     // Add any other ball-related properties
 };
