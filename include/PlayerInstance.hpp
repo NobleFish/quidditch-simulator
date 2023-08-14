@@ -13,7 +13,7 @@ public:
     void passTo(Location targetLocation);
     void shootAt(Location targetLocation);
     
-    void takePossession(Ball* ball);
+    void takePossession(Ball& ball);
     void releasePossession();
 
     Location getLocation() const;
@@ -21,7 +21,7 @@ public:
 
     bool carrying() const;
 
-    Ball* getActiveBall() const;
+    const Ball* getActiveBall() const;
 
 private:
     Location currentLocation;

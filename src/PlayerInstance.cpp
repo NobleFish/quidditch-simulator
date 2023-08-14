@@ -19,12 +19,12 @@ void PlayerInstance::moveTo(Location movementLocation)
 
 }
 
-void PlayerInstance::takePossession(Ball* ball){
+void PlayerInstance::takePossession(Ball& ball){
     
     // Reach should be implemented
-    if(!ball->getPossession())
+    if(!ball.getPossession())
     {
-        activeBall = ball;
+        activeBall = &ball;
         activeBall->setPossession(true);
         activeBall->setLocation(currentLocation);
         // Player Velocity should be implemented
@@ -64,4 +64,4 @@ Location PlayerInstance::getLocation() const {return currentLocation;}
 void PlayerInstance::setLocation(Location newLocation){currentLocation = newLocation;}
 
 bool PlayerInstance::carrying() const {return hasBall;}
-Ball* PlayerInstance::getActiveBall() const {return activeBall;}
+const Ball* PlayerInstance::getActiveBall() const {return activeBall;}

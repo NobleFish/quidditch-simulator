@@ -52,7 +52,7 @@ TEST_F(PlayerInstanceTest, TakePossession)
     Player px1("Player1",5.0F, 4.0F);
     PlayerInstance p1(px1, {1,0});
 
-    p1.takePossession(&b1);
+    p1.takePossession(b1);
 
     EXPECT_TRUE(p1.carrying());
     EXPECT_EQ(p1.getActiveBall(), &b1);
@@ -68,7 +68,7 @@ TEST_F(PlayerInstanceTest, LosePossession)
     Player px1("Player1",5.0F, 4.0F);
     PlayerInstance p1(px1, {1,0});
 
-    p1.takePossession(&b1);
+    p1.takePossession(b1);
     p1.releasePossession();
 
     EXPECT_FALSE(p1.carrying());
@@ -86,12 +86,12 @@ TEST_F(PlayerInstanceTest, TakePossessionConflict)
     PlayerInstance p2(px2, {2,2});
 
     // p1 has ball
-    p1.takePossession(&b1);
+    p1.takePossession(b1);
     EXPECT_TRUE(p1.carrying());
     EXPECT_EQ(p1.getActiveBall(), &b1);
 
     // p2 should not be able to claim that ball
-    p2.takePossession(&b1);
+    p2.takePossession(b1);
     EXPECT_FALSE(p2.carrying());
     EXPECT_NE(p2.getActiveBall(), &b1);
 
@@ -114,7 +114,7 @@ TEST_F(PlayerInstanceTest, MoveWithBall)
     Player px1("Player1",5.0F, 4.0F);
     PlayerInstance p1(px1, {1,0});
 
-    p1.takePossession(&b1);
+    p1.takePossession(b1);
 
     p1.moveTo(testLocation);
 
@@ -131,7 +131,7 @@ TEST_F(PlayerInstanceTest, PassBall)
     Player px2("Player2",5.0F, 4.0F);
     PlayerInstance p2(px2, {2,2});
 
-    p1.takePossession(&b1);
+    p1.takePossession(b1);
     p1.passTo(p2.getLocation());
     // p1 lost possession of b1
     EXPECT_FALSE(p1.carrying());
@@ -140,7 +140,7 @@ TEST_F(PlayerInstanceTest, PassBall)
     EXPECT_EQ(b1.getTarget(), p2.getLocation());
     EXPECT_EQ(b1.getVelocity(), p1.getThrowSpeed());
 
-    p2.takePossession(&b1);
+    p2.takePossession(b1);
     // p2 has possession of b1
     EXPECT_TRUE(p2.carrying());
     EXPECT_EQ(p2.getActiveBall(), &b1);
@@ -156,7 +156,7 @@ TEST_F(PlayerInstanceTest, ShootBall)
     Player px1("Player1",5.0F, 4.0F);
     PlayerInstance p1(px1, {1,0});
 
-    p1.takePossession(&b1);
+    p1.takePossession(b1);
 
     p1.shootAt(goalLocation);
     // p1 lost possession of b1
