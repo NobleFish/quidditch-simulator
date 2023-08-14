@@ -22,8 +22,8 @@ set(SOURCES
     src/main.cpp
     src/Ball.cpp
     src/Player.cpp
+    src/PlayerInstance.cpp
     src/Team.cpp
-    #src/PlayerData.cpp
 )
 add_executable(${PROJECT_NAME} ${SOURCES})
 
