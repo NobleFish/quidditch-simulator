@@ -5,6 +5,7 @@ Player::Player(std::string pName, float mSpeed, float tSpeed) : playerName(std::
 
 }
 
+// Add setPlayerName() function
 const std::string& Player::getPlayerName() const {return playerName;}
 
 float Player::getMoveSpeed() const {return moveSpeed;}

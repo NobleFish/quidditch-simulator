@@ -10,7 +10,7 @@ set(TESTFILES
     BallTest.cpp
     PlayerTest.cpp
     PlayerInstanceTest.cpp
-    #TeamTest.cpp
+    TeamTest.cpp
 )
 
 file(GLOB TESTSOURCE "../src/[!main]*.cpp")
