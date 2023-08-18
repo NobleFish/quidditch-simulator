@@ -3,6 +3,7 @@
 #include <Ball.hpp>
 
 int main() {
+    
     // Sample usage of Player and Ball classes
     /*
     Player playerA("PlayerA",{0,0}, 1.0, 1.0);

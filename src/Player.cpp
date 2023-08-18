@@ -1,8 +1,10 @@
 #include <Player.hpp>
 
-Player::Player(std::string pName, float mSpeed, float tSpeed) : playerName(std::move(pName)), moveSpeed(mSpeed), throwSpeed(tSpeed)
-{
+int Player::idProvider = 0;
 
+Player::Player(std::string pName, Role pRole) : playerName(std::move(pName)), playerRole(pRole)
+{
+    player_id = ++idProvider;
 }
 
 // Add setPlayerName() function
@@ -13,3 +15,5 @@ void Player::setMoveSpeed(float newMoveSpeed) {moveSpeed = newMoveSpeed;}
 
 float Player::getThrowSpeed() const {return throwSpeed;}
 void Player::setThrowSpeed(float newThrowSpeed) {throwSpeed = newThrowSpeed;}
+
+Player::Role Player::getRole() const {return playerRole;}

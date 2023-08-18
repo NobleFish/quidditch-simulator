@@ -7,7 +7,7 @@ PlayerInstance::PlayerInstance(const Player& basePlayer, Location startLocation)
 
 void PlayerInstance::moveTo(Location movementLocation)
 {
-    std::cout << getPlayerName() << " moving to" << movementLocation << std::endl; 
+    // std::cout << getPlayerName() << " moving to" << movementLocation << std::endl; 
     // Implement Player Velocity
     currentLocation = movementLocation;
 
@@ -37,7 +37,7 @@ void PlayerInstance::takePossession(Ball& ball){
 void PlayerInstance::passTo(Location target)
 {
     if(hasBall){
-        std::cout << getPlayerName() << " passing @ " << target << std::endl;
+        //std::cout << getPlayerName() << " passing @ " << target << std::endl;
         activeBall->setTarget(target);
         activeBall->setVelocity(getThrowSpeed());
         releasePossession();
@@ -47,7 +47,7 @@ void PlayerInstance::passTo(Location target)
 
 void PlayerInstance::shootAt(Location target){
     if(hasBall){
-        std::cout << getPlayerName()  << " shooting @ " << target << std::endl;
+        //std::cout << getPlayerName()  << " shooting @ " << target << std::endl;
         activeBall->setTarget(target);
         activeBall->setVelocity(getThrowSpeed());
         releasePossession();

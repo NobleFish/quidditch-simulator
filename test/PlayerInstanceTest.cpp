@@ -16,13 +16,11 @@ TEST_F(PlayerInstanceTest, Initialization)
     testLocation.x = 1;
     testLocation.y = 0;
 
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     EXPECT_EQ(p1.getPlayerName(), "Player1");
     EXPECT_EQ(p1.getLocation(), testLocation);
-    EXPECT_EQ(p1.getMoveSpeed(),5.0F);
-    EXPECT_EQ(p1.getThrowSpeed(),4.0F);
     EXPECT_FALSE(p1.carrying());
     EXPECT_EQ(p1.getActiveBall(), nullptr);
 
@@ -35,7 +33,7 @@ TEST_F(PlayerInstanceTest, ManualUpdates)
     testLocation.x = 2;
     testLocation.y = 1;
 
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     p1.setLocation({2,1});
@@ -49,7 +47,7 @@ TEST_F(PlayerInstanceTest, TakePossession)
     b1.setVelocity(1.0F);
     b1.setTarget({10,10});
 
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     p1.takePossession(b1);
@@ -65,7 +63,7 @@ TEST_F(PlayerInstanceTest, TakePossession)
 TEST_F(PlayerInstanceTest, LosePossession)
 {    
     Ball b1({1,0});
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     p1.takePossession(b1);
@@ -80,9 +78,9 @@ TEST_F(PlayerInstanceTest, TakePossessionConflict)
 {    
     Ball b1({1,0});
     
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
-    Player px2("Player2",5.0F, 4.0F);
+    Player px2("Player2", Player::Role::CHASER);
     PlayerInstance p2(px2, {2,2});
 
     // p1 has ball
@@ -100,7 +98,7 @@ TEST_F(PlayerInstanceTest, TakePossessionConflict)
 TEST_F(PlayerInstanceTest, Move)
 {    
     Location testLocation = {2,2};
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     p1.moveTo(testLocation);
@@ -111,7 +109,7 @@ TEST_F(PlayerInstanceTest, MoveWithBall)
 {    
     Location testLocation = {2,2};
     Ball b1({1,0});
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     p1.takePossession(b1);
@@ -126,9 +124,9 @@ TEST_F(PlayerInstanceTest, MoveWithBall)
 TEST_F(PlayerInstanceTest, PassBall)
 {    
     Ball b1({0,0});
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
-    Player px2("Player2",5.0F, 4.0F);
+    Player px2("Player2", Player::Role::CHASER);
     PlayerInstance p2(px2, {2,2});
 
     p1.takePossession(b1);
@@ -153,7 +151,7 @@ TEST_F(PlayerInstanceTest, ShootBall)
     Location goalLocation = {2,2};
     Ball b1({1,0});
 
-    Player px1("Player1",5.0F, 4.0F);
+    Player px1("Player1", Player::Role::CHASER);
     PlayerInstance p1(px1, {1,0});
 
     p1.takePossession(b1);
@@ -168,5 +166,5 @@ TEST_F(PlayerInstanceTest, ShootBall)
 
 }
 
-}  // namespace
+}
 
